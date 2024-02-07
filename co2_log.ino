@@ -12,7 +12,7 @@ MHZ19 mhz19;
 SoftwareSerial mhz19_serial(RX_PIN, TX_PIN);
 
 unsigned long timer = 0;
-bool calibrate = false;
+bool calibrate = true;
 
 void setup() {
   Serial.begin(9600);
@@ -28,7 +28,7 @@ void setup() {
 }
 
 void loop() {
-  if (millis() - timer >= 5000) {
+  if (millis() - timer >= 2500) {
     int co2 = mhz19.getCO2(true);
     Serial.print(millis());
     Serial.print(",");
