@@ -11,7 +11,7 @@ def read_serial(port, baudrate):
 
     while True:
         data = ser.readline().decode().strip()
-        if data and not data[0].isalpha():
+        if data and data[0].isnumeric():
             f = open(filename, "a")
             f.write(data + "\n")
             f.close()

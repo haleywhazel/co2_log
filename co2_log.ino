@@ -12,7 +12,7 @@ MHZ19 mhz19;
 SoftwareSerial mhz19_serial(RX_PIN, TX_PIN);
 
 unsigned long timer = 0;
-bool calibrate = true;
+bool calibrate = false;
 
 void setup() {
   Serial.begin(9600);
